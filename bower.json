@@ -1,0 +1,11 @@
+{
+	"name": "Dianjinhe-wap",
+	"version" : "1.0.0",
+	"dependencies": {
+		"zepto": "1.1.6",
+		"backbone-amd": "1.1.0",
+		"underscore-amd": "1.5.2",
+		"requirejs": "2.1.18",
+		"requirejs-text": "2.0.14"
+	}
+}

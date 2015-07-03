@@ -1,0 +1,111 @@
+.warpBox { background: none; width: 100%; overflow: hidden; padding-bottom: 80px;}
+#yibiao {  position: relative;
+  /* margin: 0 auto; */
+  display: block;
+  width: 480px;
+  height: 240px;
+  /* margin-left: -50px; */
+  left: 50%;
+  margin-left: -240px;}
+.liters { position:relative; font-size: 12px; color: #999; padding-top: 10px; height: 230px; background: #fff;}
+.timeEnd {position: absolute;
+  top: 60px;
+  width: 100%;
+  text-align: center;}
+ .timeEnd img { margin-right: 5px;margin-top: -1px;}
+.baifen {position: absolute;
+  top: 80px;
+  width: 100%;
+  text-align: center; color: #f64d4d; font-size: 30px;}
+.baifen .paresent { font-size: 60px;}
+.text {  position: absolute; padding-top: 5px;
+  top: 150px;
+  text-align: center;
+  width: 160px;
+  left: 50%;
+  margin-left: -80px;
+  border-top: 1px solid #e6e6e6; }
+.huigou {position: absolute;
+  top: 190px; text-align: center;
+  width: 100%; }
+.huigou img { margin-right: 5px; margin-top: -3px;}
+
+
+.contentText { margin-top: 10px; background: #fff; padding-top: 15px; padding-bottom: 15px;}
+.titleList { overflow: hidden; padding-bottom: 15px;}
+.titleList li { float: left; width: 25%; text-align: center;}
+.titleList li img { margin-bottom: 7px;}
+
+.listCon { margin: 0 10px; padding: 10px 5px; border-top: 1px solid #e6e6e6;}
+.listCon li { line-height: 35px}
+.listCon li span {color: #bfbfbf; display: inline-block; width: 100px;}
+
+.xiangmulist { margin-top: 10px; background: #fff;}
+.tabC { overflow: hidden; border-bottom: 1px solid #ececec}
+.tabTitle { float: left; width: 21%; margin: 0 2%; text-align: center; height: 40px; line-height: 40px;}
+.tabTitle.setOn { border-bottom: 2px solid #f64d4d; color: #f64d4d;}
+
+.anquanList { }
+.anquanList h2 { height: 45px; position: relative; line-height: 45px; border-bottom:1px solid #dedede; margin: 0 3%; padding: 0 2%; background: #fff;}
+.content { padding: 0 4%; background: #f4f4f4; line-height: 24px; display: none; border-bottom: 1px solid #dedede;padding-top: 20px; padding-bottom: 20px;}
+.content p {}
+.anquanList li {height: auto;overflow: hidden;}
+.anquanList li.onShow h2 { border-bottom: 1px solid #fff;}
+.anquanList li.onShow h2 .jiantou {-webkit-transform:rotate(180deg);-webkit-transition:-webkit-transform .2s;}
+.anquanList h2 .jiantou { width: 12px; height: 6px; position: absolute; top: 18px; right: 2%; background: url(../wap_images/icon/trangle-bot.png) no-repeat; background-size: 12px 6px;}
+
+.touzi { position: fixed; height: 50px; line-height: 50px; bottom: 0; width: 100%;}
+.touzi a { display: block; height: 50px; text-align: center; color: #fff; background: #f64d4d;}
+
+.imginset { padding-top: 10px;}
+.imginset img { width: 90%; display: block; margin: 0 auto;}
+
+.tabList table th, .tabList table td { font-size: 12px; /*border: 1px solid #ececec;*/ padding: 1%; line-height: 28px;}
+.tabList table { margin: 0 1%; display: block;}
+.tabList.pt10 { padding-top: 10px;}
+
+
+.inputY {
+    text-align: center;
+  overflow: hidden;
+}
+.inputY input {
+  width: 87%;
+  display: inline-block;
+  line-height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 40px;
+  border: 1px solid #afafaf;
+  border-radius: 3px 0 0 3px;
+}
+.inputY span {
+  display: inline-block;
+  width: 13%;
+  text-align: center;
+  vertical-align: top;
+  background: #afafaf;
+  color: #fff;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 0 3px 3px 0;
+}
+
+.zhifuText { background: #fff; margin-top: 10px;}
+.zhifuText li { overflow: hidden; border-bottom: 1px solid #ececec; padding: 0 10px; height: 45px; line-height: 45px;}
+.zhifuText li:last-child { border-bottom:none;}
+.zhifuText li span { width: 110px; float: left; color: #818181;}
+.zhifuText li i { font-style: normal; float: right;}
+.zhifuText .listCon { border: none; padding: 0; }
+
+.shengou { margin-top: 10px; padding: 0 10px;}
+.shengou h2 { height: 30px; line-height: 30px;}
+.shouyi { overflow: hidden; font-size: 12px;}
+.shouyi span { line-height: 28px;}
+.shouyi .left { float: left;}
+.shouyi .right { float: right;}
+
+.zhifu { text-align: center;}
+.zhifu .nowZf { display: block; width: 90%; margin: 20px auto 10px; text-align: center; color: #fff; background: #f64d4d; height: 50px; line-height: 50px; border-radius: 5px;}
+.zhifu p a { color: #f64d4d; text-decoration: underline;}
+.zhifu p { font-size: 12px;}

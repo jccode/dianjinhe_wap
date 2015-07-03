@@ -1,0 +1,140 @@
+/* 页面元素初始化和常用样式定义-start */
+/*======== 全局 ========*/
+*{margin:0;padding:0;-webkit-tap-highlight-color:rgba(0,0,0,0);-webkit-touch-callout:none;-webkit-user-select:none;-webkit-appearance:none;outline:none;word-break:break-all;box-sizing:border-box;-webkit-box-sizing:border-box;}
+html,body{width:100%;height:100%;}
+section,nav{display:block;}
+body,div,p,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,th,td{margin: 0;padding: 0;}
+body{background: #f0f3f7;font-size: 14px; color: #333; font-family:arial,microsoft yahei,verdana, simsun; width: 100%;}
+table{border-collapse: collapse; border-spacing: 0;}
+fieldset,img{border: none; vertical-align:middle;}
+ol,ul,li{list-style: none;}
+h1,h2,h3,h4,h5,h6{font-size: 100%;font-weight: normal;}
+em{font-style: normal;}
+input,button,select,textarea{/*outline: none;*/}
+input:focus { outline:none; }
+input[type="text"],input[type="email"],input[type="url"],input[type="number"],input[type="password"],textarea{-webkit-user-select:text;}
+input,.select{-webkit-user-select:initial;font-family:Arial,"Microsoft Yahei";font-size:14px;border:none; color: #232323;}
+
+/*禁止了文本框的拖拉*/
+textarea{resize: none;}
+
+.warpBox {width: 100%; background: #fff; margin: 0 auto;}
+@media screen and (min-width:640px){
+	.warpBox {width: 640px;}
+}
+
+a{text-decoration: none;}
+a:hover{text-decoration: none;}
+a:link{text-decoration: none;}
+
+.c{*zoom: 1;}
+.c:after{content:".";display:block;height:0;clear:both;visibility:hidden;}
+.clearfix {display: block;}
+
+.tal{text-align:left!important;}
+.tac{text-align:center!important;}
+.tar{text-align:right!important;}
+.vh{visibility:hidden;}
+.vat{vertical-align: top;}
+.dsn{display: none!important;}
+.dn{display: none;}
+.opacity{opacity:0.5;}
+.fl{float:left !important;}
+.fr{float:right!important;}
+.por{position:relative;}
+.o-hidn{overflow: hidden;}
+.ms-controller{visibility: hidden;}
+table {border-collapse: collapse;border-spacing: 0;}
+.pre{ position: relative; }
+.bgf{ background: #fff!important; }
+.bg-gray{ background: #f0f3f7; }
+.dis-b{display: block;}
+.dis-no{ display: none; }
+
+.box-box,.flex{display: -webkit-box;}
+.box-flex{-webkit-box-flex:1;}
+.box-vam{display: -webkit-box;-webkit-box-pack: center;-webkit-box-orient: vertical;vertical-align: middle;text-align:center;}
+/*button*/
+.buttonSend { height: 50px; line-height: 50px; font-size: 18px; color: #fff; display: block; border-radius: 5px; margin:23px 5% 0; background: #f64d4d; text-align: center;}
+.sure-btn{ margin: 12px 0 0 0; background-color: #d12d46; }
+/**distance***/
+.d-wrap{ padding: 5px 8px; }
+.mt0{ margin-top: 0!important; }
+.mb0{ margin-bottom: 0!important; }
+.mlr0{ margin-right: 0px!important; margin-left: 0px!important; }
+.mt20{ margin-top: 10px!important; }
+
+.pt6{ padding-top: 3px; }
+.pt50{ padding-top: 25px!important; }
+.pb26{ padding-bottom: 13px!important; }
+.pt20{ padding-top: 10px; }
+/*width*/
+.w170{ width: 85px; }
+.h-all{ height: 100%; }
+/*font*/
+.f30{ font-size: 15px; }
+.f20{ font-size: 10px; }
+/*color*/
+.gray{ color: #5e5e5e; }
+.red{ color: #f64d4d; }
+.red a{ color: #f64d4d; }
+/*popup*/
+.makLayer{ width: 100%; height: 100%; position: fixed; top: 0; left: 0; background: rgba(0,0,0,0.6); }
+.popup{ position: fixed; top: 50%; left: 41px; right: 41px; border-radius: 4px; background-color: #f2f2f2; padding: 16px 24px; font-size: 12px; color: #555; line-height: 17px; }
+.suc-pic{ position: absolute; top: -22px; left: 50%; width: 211px; margin-left: -106px; height: 39px; background: url("../wap_images/peizi/suc-pic.png") no-repeat; background-size: 211px 39px; }
+/*head*/
+.topBox {height: 48px; line-height: 48px; background: #fff;}
+.leftTop { display: inline-block; width: 20%; text-align: left;}
+.leftTop a.topBack { display: inline-block; padding-left: 18px; margin-left: 10px;  font-size: 14px; color: #f64d4d; line-height: 48px; background: url(../wap_images/program/topBack.png) no-repeat left 16px; background-size: 16px 16px;}
+.topBox .centerTop { width: 60%; text-align: center; display: inline-block; font-size: 16px; font-weight: bold;}
+.top-person{ position: absolute; width: 20px; height: 20px; top:50%; left: 21px; margin-top: -10px; background: url("../wap_images/index/person-icon.png") no-repeat center; background-size: 20px 20px; }
+.top-index{ position: absolute; width: 28px; height: 23px; top: 50%; left: 16px; margin-top: -12px; background: url("../wap_images/index/index-icon.png") no-repeat center; background-size: 28px 23px; }
+.top-exit{ position: absolute; right: 17px; top: 4px; line-height: 40px; font-size: 16px; color: #f64d4d; }
+.topBox .dz_head_zy { height: 47px; line-height: 47px;}
+.topBox .shaixuan { border: 1px solid #ccc; top: 42px;}
+.topBox .shaixuan ul li a { height: 30px; line-height: 30px;  font-size: 14px; color:#232323; background: #fff;}
+.top-exit #toExit { color: #232323;}
+.top-exit #toExit:link  { color: #232323;}
+/*login*/
+.form-table-list{background:#fff; padding: 0 9px; }
+.form-table-list li{display:-webkit-box; border-bottom:1px solid #ececec;padding:0 15px; position: relative; }
+.form-table-list li:last-child{border-bottom:none;}
+.form-table-list li figure{vertical-align:middle;padding:3px 0 0 25px}
+.form-table-list label{display:block;line-height:47px;font-size:14px;color:#adadad;width:30px;white-space:nowrap;}
+.form-table-list label:before{margin-right:14px; height: 47px;}
+.form-table-list .edit_ipt{width:100%;-webkit-box-flex:1;background: transparent;}
+.form-table-list .ipt{height:47px;background-color:transparent;font-size:14px;vertical-align:top;border:none;font-family: "Microsoft Yahei";width:100%;}
+.inputBorder{border:1px solid #f60 !important;}
+.login-text{ padding: 13px 5%; line-height: 18px; }
+.login-text a{ font-size: 13px; color: #f64d4d; }
+.code-img{ width: 74px; height: 34px; margin-top: 7px; border-left: 1px solid #ececec; padding-left: 6px; }
+/*icon*/
+.trangle{ width: 12px; height: 9px; position: absolute; top: 50%; right: 4px; margin-top: -4px; background: url("../wap_images/icon/trangle-top.png") no-repeat center; background-size: 12px 8px; }
+.trangle-bot{ background: url("../wap_images/icon/trangle-bot.png") no-repeat center; }
+.userIcon:before,.passwordIcon:before,.codeIcon:before{ display: inline-block; content: ""; width: 20px; height: 22px; background-size: 20px!important; vertical-align: middle; }
+.userIcon:before{ background: url("../wap_images/icon/user-icon.png") no-repeat center;}
+.passwordIcon:before{ background: url("../wap_images/icon/paw-icon.png") no-repeat center;}
+.codeIcon:before{ background: url("../wap_images/icon/acc-icon.png") no-repeat center;}
+
+/*底部浮动导航*/
+.navBottom { position: fixed; height: 50px; width: 100%; background: #2d3037; bottom: 0; left: 0; display:box;display:-moz-box;display:-webkit-box;}
+.navBottom a { display: block; background-size: 23px 23px; line-height: 77px; background-position: center 5px; background-repeat:no-repeat; text-align: center;  color: #d9dce4;box-flex:1; -webkit-box-flex:1; -moz-box-flex:1; width: 0%; height: 50px;}
+.navBottom a.on { color: #ff5d5d;}
+.indexL  { background-image: url(../wap_images/userMsg/buton1.png);}
+.peiziL {background-image: url(../wap_images/userMsg/buton2.png);}
+.myL {background-image: url(../wap_images/userMsg/buton3.png);}
+.moreL {background-image: url(../wap_images/userMsg/buton4.png);}
+.indexL.on {background-image: url(../wap_images/userMsg/buton1_on.png);}
+.peiziL.on {background-image: url(../wap_images/userMsg/buton2_on.png);}
+.myL.on {background-image: url(../wap_images/userMsg/buton3_on.png);}
+.moreL.on {background-image: url(../wap_images/userMsg/buton4_on.png);}
+
+/*弹出层*/
+.indexExit { position: fixed; background: #efeff4;border-radius: 5px; width: 90%; left: 5%; top: 30%; overflow: hidden; padding-bottom: 15px; z-index: 10000;}
+.fade { background: #000; opacity: 0.5; position:fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: 9999;}
+.indexExit h2 { height: 44px; line-height: 44px; font-size: 20px; color: #fff; background: #f64d4d; text-align: center;}
+.indexExit .textBox {   min-height: 40px;line-height: 30px;color: #666;background: url(../wap_images/index/alert.png) no-repeat center top;background-size: 40px 40px;padding-top: 45px;width: 260px;text-align: center;margin: 20px auto;}
+.buttonExit {text-align: center; font-size: 0; }
+.buttonExit a { display: inline-block; font-size: 14px; height: 40px; line-height: 40px; border: 1px solid #f64d4d; background: #f64d4d; color: #fff; border-radius: 5px; text-align: center; width: 40%;}
+.buttonExit a.boExit { margin-right: 5%; background: #fbfbfb; color: #232323; border: 1px solid #d2d2d3;}
+
