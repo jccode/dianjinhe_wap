@@ -226,7 +226,7 @@ module.exports = (grunt) ->
 				tasks: [
 					'copy:app'
 					'copy:dev'
-					'karma'
+					# 'karma'
 				]
 				options:
 					livereload: true
@@ -244,7 +244,7 @@ module.exports = (grunt) ->
 			test:
 				files: 'test/**/*.*'
 				tasks: [
-					'karma'
+					# 'karma'
 				]
 			# Used to keep the web server alive
 			none:

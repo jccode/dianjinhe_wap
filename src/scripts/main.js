@@ -10,6 +10,7 @@
         paths: {
             "zepto": "libs/zepto",
             "underscore": "libs/underscore",
+            "dust": "libs/dust-full.js",
             "backbone": "libs/backbone",
             "text": "libs/text"
         },

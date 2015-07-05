@@ -5,7 +5,7 @@
     "zepto": "1.1.6",
     "backbone-amd": "1.1.0",
     "underscore-amd": "1.5.2",
-    // "dustjs-linkedin": "~2.7.2",
+    "dustjs-linkedin": "~2.7.2",
     "requirejs": "2.1.18",
     "requirejs-text": "2.0.14",
     "html5shiv": "~3.7.2",
@@ -21,9 +21,9 @@
     "underscore-amd": {
       "scripts/libs": "underscore.js"
     },
-    // "dustjs-linkedin": {
-    //    "scripts/libs": "dust-full.js"
-    // },
+    "dustjs-linkedin": {
+       "scripts/libs": "dust-full.js"
+    },
     "requirejs": {
       "scripts/libs": "require.js"
     },

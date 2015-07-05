@@ -8,10 +8,9 @@ define(["underscore", "backbone"], function (_, Backbone) {
 
      // Router
     var Router = Backbone.Router.extend({
-
-
+        
         routes: {
-            // "": "home",
+            "/": "index",
             // "sample": "sample",
             // "licai": "licai",
             // "licai/:id": "licaiDetail"
@@ -19,8 +18,8 @@ define(["underscore", "backbone"], function (_, Backbone) {
         },
 
         
-        loadModule: function (module) {
-            require([module], function (module) {
+        loadModule: function (module, override) {
+            require([override? module: "modules/" + module], function (module) {
                 module();
             });
         },
@@ -51,10 +50,48 @@ define(["underscore", "backbone"], function (_, Backbone) {
         },
 
         defaultAction: function() {
-            // this.loadModule("modules/home/main");
+            var current = this.current(),
+                path = current.params[0],
+                query = current.params[1],
+                reg_path = /(\w+)\/(.*)/,
+                fallback = "home",
+                module, subpath;
+            // console.log("router load "+path);
+
+            if (!path || path == "/" || path == "" || path == "#") {
+                return;
+            }
             
-            var params = this.current().params;
+            if (reg_path.test(path)) {
+                var m = path.match(reg_path);
+                module = m[1];
+                subpath = m[2];
+            } else {
+                module = path;
+            }
             
+            try {
+                require(["modules/" + module + "/main"], function (module) {
+                    // console.log(module);
+                    if(_.isFunction(module)){
+                        module(subpath, query);
+                    }
+                    else if(_.isObject(module)) {
+                        module.initialize(subpath, query);
+                    } 
+                    else {
+                        console.log('module '+moudle+' must be a Function or Object');
+                    }
+                });
+            } catch(e) {
+                //this.loadModule(fallback);
+                console.log( 'moudle ' + module + 'is not exist' );
+            }
+
+        },
+
+        index: function() {
+            console.log('abc');
         }
     });
 
