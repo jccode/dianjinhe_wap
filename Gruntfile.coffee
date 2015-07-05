@@ -131,6 +131,25 @@ module.exports = (grunt) ->
 				files:
 					'.temp/styles/styles.css': '.temp/styles/styles.less'
 
+		# Compile dustjs templates
+		dust:
+			app:
+				# files: [
+				# 	cwd: '<%= settings.tempDirectory %>'
+				# 	src: ['**/*.dust']
+				# 	dest: '<%= settings.tempDirectory %>/scripts/template.js'
+				# 	expand: true
+				# 	ext: '.js'
+				# ]
+				files:
+					'<%= settings.tempDirectory %>/scripts/template.js': '<%= settings.tempDirectory %>/**/*.dust'
+				options:
+					basePath: "<%= settings.tempDirectory %>/"
+					wrapper: "amd"
+					runtime: false
+					wrapperOptions:
+						packageName: 'tpls'
+
 		# Minifies index.html
 		# Extra white space and comments will be removed
 		# Content within <pre /> tags will be left unchanged
@@ -241,6 +260,16 @@ module.exports = (grunt) ->
 				options:
 					livereload: true
 					nospawn: true
+			dust:
+				files: 'src/tpls/**/*.dust'
+				tasks: [
+					'copy:app'
+					'dust:app'
+					'copy:dev'
+				]
+				options:
+					livereload: true
+					nospawn: true
 			test:
 				files: 'test/**/*.*'
 				tasks: [
@@ -285,6 +314,7 @@ module.exports = (grunt) ->
 		'clean:working'
 		'bower:install'
 		'copy:app'
+		'dust:app'
 		'less'
 		'template:indexDev'
 		'copy:dev'

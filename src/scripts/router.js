@@ -10,7 +10,6 @@ define(["underscore", "backbone"], function (_, Backbone) {
     var Router = Backbone.Router.extend({
         
         routes: {
-            "/": "index",
             // "sample": "sample",
             // "licai": "licai",
             // "licai/:id": "licaiDetail"
@@ -54,11 +53,13 @@ define(["underscore", "backbone"], function (_, Backbone) {
                 path = current.params[0],
                 query = current.params[1],
                 reg_path = /(\w+)\/(.*)/,
-                fallback = "home",
+                fallback = "home/main",
                 module, subpath;
             // console.log("router load "+path);
 
             if (!path || path == "/" || path == "" || path == "#") {
+                // console.log("default; should return to index");
+                this.loadModule(fallback);
                 return;
             }
             
@@ -72,7 +73,6 @@ define(["underscore", "backbone"], function (_, Backbone) {
             
             try {
                 require(["modules/" + module + "/main"], function (module) {
-                    // console.log(module);
                     if(_.isFunction(module)){
                         module(subpath, query);
                     }
@@ -84,15 +84,12 @@ define(["underscore", "backbone"], function (_, Backbone) {
                     }
                 });
             } catch(e) {
-                //this.loadModule(fallback);
+                this.loadModule(fallback);
                 console.log( 'moudle ' + module + 'is not exist' );
             }
 
-        },
-
-        index: function() {
-            console.log('abc');
         }
+
     });
 
     return new Router();

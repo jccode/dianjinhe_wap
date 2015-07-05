@@ -10,9 +10,10 @@
         paths: {
             "zepto": "libs/zepto",
             "underscore": "libs/underscore",
-            "dust": "libs/dust-full.js",
+            "dust": "libs/dust-full",
             "backbone": "libs/backbone",
-            "text": "libs/text"
+            "text": "libs/text",
+            "common": "component/common"
         },
         map: {
             "*": {
@@ -26,7 +27,7 @@
         }
     });
     
-
+    define.amd.dust = true;
     require(['app'], function (app) {
         app.initialize();
     });
