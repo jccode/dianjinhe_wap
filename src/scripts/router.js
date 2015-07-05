@@ -51,9 +51,10 @@ define(["underscore", "backbone"], function (_, Backbone) {
         },
 
         defaultAction: function() {
-            this.loadModule("modules/home/main");
-            // console.log(this.current());
-            // var hash = this.current();
+            // this.loadModule("modules/home/main");
+            
+            var params = this.current().params;
+            
         }
     });
 

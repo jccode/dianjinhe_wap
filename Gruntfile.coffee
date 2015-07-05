@@ -111,6 +111,7 @@ module.exports = (grunt) ->
 				expand: true
 			styles: '.temp/styles/styles.min.css'
 
+		
 		# Compresses png files
 		imagemin:
 			images:
@@ -123,8 +124,7 @@ module.exports = (grunt) ->
 				options:
 					optimizationLevel: 7
 
-
-
+		
 		# Compile LESS (.less) files to CSS (.css)
 		less:
 			app:
@@ -159,7 +159,7 @@ module.exports = (grunt) ->
 					name: 'main'
 					# Exclude main from the final output to avoid the dependency on RequireJS at runtime
 					onBuildWrite: (moduleName, path, contents) ->
-						modulesToExclude = ['main']
+						modulesToExclude = [] # main
 						shouldExcludeModule = modulesToExclude.indexOf(moduleName) >= 0
 
 						return '' if shouldExcludeModule
@@ -184,93 +184,6 @@ module.exports = (grunt) ->
 					optimizeCss: 'standard'
 					out: '.temp/styles/styles.min.css'
 
-		# Creates main file for RequireJS
-		shimmer:
-			dev:
-				cwd: '.temp/scripts'
-				src: [
-					'**/*.{coffee,js}'
-					'!libs/angular.{coffee,js}'
-					'!libs/angular-animate.{coffee,js}'
-					'!libs/angular-ui-router.{coffee,js}'
-					'!lib/ui-bootstrap-tpls.{coffee,js}'
-					'!lib/showErrors.min.{coffee,js}'
-					'!lib/underscore.{coffee,js}'
-					'!libs/html5shiv-printshiv.{coffee,js}'
-					'!libs/json3.min.{coffee,js}'
-					'!libs/require.{coffee,js}'
-					
-					'!libs/jquery.min.{coffee,js}'
-					'!libs/bootstrap.min.{coffee,js}'
-					'!libs/sweetalert.min.{coffee,js}'
-					'!libs/loading-bar.min.{coffee,js}'
-					'!libs/jquery.nicescroll.min.{coffee,js}'
-					'!libs/waves.min.{coffee,js}'
-					'!libs/jquery.bootstrap-growl.min.{coffee,js}'
-					'!libs/chosen.jquery.min.{coffee,js}'
-					'!libs/jquery.inputmask.min.{coffee,js}'
-				]
-				order: [
-					'libs/jquery.min.js'
-					'libs/angular.min.js'
-					'NGAPP':
-						'ngAnimate': 'libs/angular-animate.min.js'
-						'ngMockE2E': 'libs/angular-mocks.js'
-						'ngCookies': 'libs/angular-cookies.min.js'
-						'ui.router': 'libs/angular-ui-router.min.js'
-						'ui.utils': 'libs/ui-utils.min.js'
-						'ui.bootstrap': 'libs/ui-bootstrap-tpls.min.js'
-						'angular.city.select':'libs/angular-city-select.js'
-						'w5c.validator':'libs/w5cValidator.min.js'
-						'ui.bootstrap.showErrors': 'libs/showErrors.min.js'
-						'angular-md5': 'libs/angular-md5.min.js'
-
-						'angular-loading-bar': 'libs/loading-bar.min.js'
-				]
-				require: 'NGBOOTSTRAP'
-			prod:
-				cwd: '<%= shimmer.dev.cwd %>'
-				src: [
-					'**/*.{coffee,js}'
-					'!libs/angular.{coffee,js}'
-					'!libs/angular-animate.{coffee,js}'
-					'!libs/angular-mocks.{coffee,js}'
-					'!libs/angular-ui-router.{coffee,js}'
-					'!libs/ui-bootstrap-tpls.{coffee,js}'
-					'!lib/showErrors.min.{coffee,js}'
-					'!libs/underscore.{coffee,js}'
-					'!libs/html5shiv-printshiv.{coffee,js}'
-					'!libs/json3.min.{coffee,js}'
-					'!libs/require.{coffee,js}'
-
-					'!libs/jquery.min.{coffee,js}'
-					'!libs/bootstrap.min.{coffee,js}'
-					'!libs/sweetalert.min.{coffee,js}'
-					'!libs/loading-bar.min.{coffee,js}'
-					'!libs/jquery.nicescroll.min.{coffee,js}'
-					'!libs/waves.min.{coffee,js}'
-					'!libs/jquery.bootstrap-growl.min.{coffee,js}'
-					'!libs/chosen.jquery.min.{coffee,js}'
-					'!libs/jquery.inputmask.min.{coffee,js}'
-					
-					'!backend/**/*.*'
-				]
-				order: [
-					'libs/angular.min.js'
-					'NGAPP':
-						'ngAnimate': 'libs/angular-animate.min.js'
-						'ngCookies': 'libs/angular-cookies.min.js'
-						'ui.router': 'libs/angular-ui-router.min.js'
-						'ui.utils': 'libs/ui-utils.min.js'
-						'ui.bootstrap': 'libs/ui-bootstrap-tpls.min.js'
-						'angular.city.select':'libs/angular-city-select.js'
-						'w5c.validator':'libs/w5cValidator.min.js'
-						'ui.bootstrap.showErrors': 'libs/showErrors.min.js'
-						'angular-md5': 'libs/angular-md5.min.js'
-
-						'angular-loading-bar': 'libs/loading-bar.min.js'
-				]
-				require: '<%= shimmer.dev.require %>'
 
 		# Compiles underscore expressions
 		#
@@ -287,7 +200,6 @@ module.exports = (grunt) ->
 			indexDev:
 				files:
 					'.temp/index.html': '.temp/index.html'
-					'.temp/index.jade': '.temp/index.jade'
 			index:
 				files: '<%= template.indexDev.files %>'
 				environment: 'prod'
@@ -373,7 +285,6 @@ module.exports = (grunt) ->
 		'clean:working'
 		'bower:install'
 		'copy:app'
-		'shimmer:dev'
 		'less'
 		'template:indexDev'
 		'copy:dev'
@@ -410,7 +321,6 @@ module.exports = (grunt) ->
 		'clean:working'
 		'bower:install'
 		'copy:app'
-		'shimmer:prod'
 		'imagemin'
 		'hash:images'
 		'less'

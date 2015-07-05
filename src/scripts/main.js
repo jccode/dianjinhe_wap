@@ -8,9 +8,9 @@
     requirejs.config({
         baseUrl: "scripts/",
         paths: {
-            "zepto": "libs/zepto.min",
-            "underscore": "libs/underscore-min",
-            "backbone": "libs/backbone-min",
+            "zepto": "libs/zepto",
+            "underscore": "libs/underscore",
+            "backbone": "libs/backbone",
             "text": "libs/text"
         },
         map: {
