@@ -1,10 +1,10 @@
 
 
-define(['jquery', 'underscore', 'common', 'text!/views/home.html'], function($, _, c, tpl) {
+define(['jquery', 'underscore', 'common'], function($, _, c) {
 
     
     return function () {
-        c.render('root', tpl);
+        c.render('root', 'views/home');
     };
 
 });

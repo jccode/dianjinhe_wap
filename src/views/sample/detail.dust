@@ -1,0 +1,7 @@
+
+{>"includes/header"/}
+
+{#project}
+<p>项目名称: {name}</p>
+<p>项目预算: {budget}</p>
+{/project}

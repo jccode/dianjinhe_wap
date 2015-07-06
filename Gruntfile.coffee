@@ -134,21 +134,16 @@ module.exports = (grunt) ->
 		# Compile dustjs templates
 		dust:
 			app:
-				# files: [
-				# 	cwd: '<%= settings.tempDirectory %>'
-				# 	src: ['**/*.dust']
-				# 	dest: '<%= settings.tempDirectory %>/scripts/template.js'
-				# 	expand: true
-				# 	ext: '.js'
-				# ]
 				files:
-					'<%= settings.tempDirectory %>/scripts/template.js': '<%= settings.tempDirectory %>/**/*.dust'
+					'<%= settings.tempDirectory %>/scripts/views.js': '<%= settings.tempDirectory %>/**/*.dust'
 				options:
 					basePath: "<%= settings.tempDirectory %>/"
 					wrapper: "amd"
 					runtime: false
 					wrapperOptions:
-						packageName: 'tpls'
+						packageName: "views"
+						deps:
+							dust: "dust"
 
 		# Minifies index.html
 		# Extra white space and comments will be removed
@@ -261,7 +256,7 @@ module.exports = (grunt) ->
 					livereload: true
 					nospawn: true
 			dust:
-				files: 'src/tpls/**/*.dust'
+				files: 'src/**/*.dust'
 				tasks: [
 					'copy:app'
 					'dust:app'
@@ -302,6 +297,11 @@ module.exports = (grunt) ->
 			copyDevConfig.src = [
 				path.join(dirname, "#{basename}.{less,css}")
 				path.join(dirname, 'styles.css')
+			]
+		if key is 'dust'
+			copyDevConfig.src = [
+				path.join(dirname, "#{basename}.dust")
+				"scripts/views.js"
 			]
 
 		grunt.config ['copy', 'dev'], copyDevConfig

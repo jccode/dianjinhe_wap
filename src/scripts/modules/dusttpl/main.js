@@ -1,9 +1,17 @@
 
-define(['jquery', 'underscore', 'common', 'text!/views/body.html'], function($, _, c, tpl) {
+define(['jquery', 'underscore', 'common'], function($, _, c) {
     
     return function() {
-        // console.log(tpl);
-        c.render('container', tpl);
+
+        var locals = {
+            friends: [
+                { name: "Barack Obama", age: 52 },
+                { name: "Joe Biden", age: 71 }
+            ]
+        };
+        
+        c.render('container', 'views/hello', locals);
+        
     };
 
 });

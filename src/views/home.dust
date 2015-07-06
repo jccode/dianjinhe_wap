@@ -1,17 +1,5 @@
 
-<!-- header -->
-<div class="wrapBox">
-    <!-- topbox -->
-    <div class="topBox">
-    	<div class="leftTop">
-    		<a class="topBack" href="/">返回</a>
-    	</div>
-    	<div class="centerTop">
-    		<h1>信托金07第2期</h1>
-    	</div>
-    </div>    
-</div>
-
+{>"includes/header"/}
 
 <h1>Welcome home !</h1>
 <nav>
@@ -19,6 +7,7 @@
         <li><a id="home" href="#home">Home</a></li>
         <li><a href="#dusttpl">dust tpl</a></li>
         <li><a href="#plainhtml">plant html</a></li>
+        <li><a href="#sample">sample</a></li>
     </ul>
 
 </nav>

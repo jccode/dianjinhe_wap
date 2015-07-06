@@ -1,0 +1,17 @@
+
+{>"includes/header"/}
+
+<div class="container">
+<table>
+    <th>
+        <td>项目名称</td>
+        <td>项目预算</td>
+    </th>
+    {#projects}
+    <tr>
+        <td><a href="#sample/{id}"> {name} </a></td>
+        <td> {budget} </td>
+    </tr>
+    {/projects}
+</table>
+</div>

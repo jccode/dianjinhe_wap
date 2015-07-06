@@ -1,0 +1,10 @@
+
+Hello,
+<ul>
+{#friends}
+  <li>
+    {name}, {age}{~n}
+  </li>
+{/friends}
+</ul>
+

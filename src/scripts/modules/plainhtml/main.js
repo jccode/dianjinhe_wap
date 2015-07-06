@@ -1,8 +1,8 @@
 
-define(['jquery', 'underscore', 'common', 'text!/views/licai.html'], function($, _, c, tpl) {
+define(['jquery', 'underscore', 'common', 'text!/views/plain.html'], function($, _, c, tpl) {
 
 
     return function() {
-        c.render('root', tpl);
+        c.renderHtml('root', tpl);
     };
 });
